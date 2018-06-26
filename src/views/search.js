@@ -6,14 +6,15 @@ var SearchView = Backbone.View.extend({
   },
   
   handleKeyUp: function(e) {
-    if (e.keyCode === 13) {
-      this.doSearch();
-    }
+    this.doSearch();
+    // if (e.keyCode === 13) {
+    //   this.doSearch();
+    // }
   },
   
   doSearch: function() {
-    this.collection.search(this.$('input').val().trim());
-    this.$('input').val('');
+    setInterval(this.collection.search(this.$('input').val().trim()), 100);
+    //this.$('input').val('');
   },
 
   render: function() {
