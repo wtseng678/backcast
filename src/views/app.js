@@ -5,7 +5,7 @@ var AppView = Backbone.View.extend({
   initialize: function() {
     this.videos = new Videos();
     this.listenTo(this.videos, 'sync', this.firstSearch);
-    this.videos.search('test');
+    this.videos.search();
     this.render();
   },
 
